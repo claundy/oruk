@@ -33,6 +33,10 @@ public class ServiceService {
     public List<uk.codery.demo.openreferrals.model.Service> findByLocationId(String locationId) {
         return serviceRepository.findByLocationId(locationId);
     }
+
+    public List<uk.codery.demo.openreferrals.model.Service> findByTaxonomyName(String taxonomyName) {
+        return serviceRepository.findByTaxonomyName(taxonomyName);
+    }
     
     public uk.codery.demo.openreferrals.model.Service save(uk.codery.demo.openreferrals.model.Service service) {
         if (service.getId() == null) {

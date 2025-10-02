@@ -8,6 +8,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.DBRef;
 import jakarta.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
+import java.util.Set;
 
 @Data
 @NoArgsConstructor
@@ -34,6 +35,9 @@ public class Service {
     
     @DBRef
     private Location location;
+
+    @DBRef
+    private Set<Taxonomy> taxonomies;
     
     private LocalDateTime createdAt;
     
