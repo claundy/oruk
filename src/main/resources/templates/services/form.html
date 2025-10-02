@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Service Form</title>
+</head>
+<body>
+    <h1>Service Form</h1>
+    <form th:action="@{/ui/services}" th:object="${service}" method="post">
+        <input type="hidden" th:field="*{id}" />
+        <div>
+            <label>Name:</label>
+            <input type="text" th:field="*{name}" />
+        </div>
+        <div>
+            <label>Description:</label>
+            <input type="text" th:field="*{description}" />
+        </div>
+        <div>
+            <label>Email:</label>
+            <input type="text" th:field="*{email}" />
+        </div>
+        <div>
+            <label>URL:</label>
+            <input type="text" th:field="*{url}" />
+        </div>
+        <div>
+            <label>Status:</label>
+            <input type="text" th:field="*{status}" />
+        </div>
+        <div>
+            <label>Organization:</label>
+            <select th:field="*{organization}">
+                <option th:each="org : ${organizations}" th:value="${org.id}" th:text="${org.name}"></option>
+            </select>
+        </div>
+        <div>
+            <label>Location:</label>
+            <select th:field="*{location}">
+                <option th:each="loc : ${locations}" th:value="${loc.id}" th:text="${loc.name}"></option>
+            </select>
+        </div>
+        <div>
+            <label>Taxonomies:</label>
+            <select th:field="*{taxonomies}" multiple="multiple">
+                <option th:each="tax : ${taxonomies}" th:value="${tax.id}" th:text="${tax.name}"></option>
+            </select>
+        </div>
+        <div>
+            <button type="submit">Save</button>
+        </div>
+    </form>
+</body>
+</html>
