@@ -43,6 +43,11 @@ public class ServiceController {
     public ResponseEntity<List<Service>> getServicesByLocation(@PathVariable String locationId) {
         return ResponseEntity.ok(serviceService.findByLocationId(locationId));
     }
+
+    @GetMapping("/taxonomy/{taxonomyName}")
+    public ResponseEntity<List<Service>> getServicesByTaxonomy(@PathVariable String taxonomyName) {
+        return ResponseEntity.ok(serviceService.findByTaxonomyName(taxonomyName));
+    }
     
     @PostMapping
     public ResponseEntity<Service> createService(@Valid @RequestBody Service service) {
