@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Taxonomy Form</title>
+</head>
+<body>
+    <h1>Taxonomy Form</h1>
+    <form th:action="@{/ui/taxonomies}" th:object="${taxonomy}" method="post">
+        <input type="hidden" th:field="*{id}" />
+        <div>
+            <label>Name:</label>
+            <input type="text" th:field="*{name}" />
+        </div>
+        <div>
+            <button type="submit">Save</button>
+        </div>
+    </form>
+</body>
+</html>

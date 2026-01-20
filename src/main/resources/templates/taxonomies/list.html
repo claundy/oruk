@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Taxonomies</title>
+</head>
+<body>
+    <h1>Taxonomies</h1>
+    <a href="/ui/taxonomies/new">Add New Taxonomy</a>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="taxonomy : ${taxonomies}">
+                <td th:text="${taxonomy.id}"></td>
+                <td th:text="${taxonomy.name}"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

@@ -36,6 +36,12 @@
             <artifactId>spring-boot-starter-web</artifactId>
         </dependency>
 
+        <!-- Thymeleaf -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-thymeleaf</artifactId>
+        </dependency>
+
         <!-- Spring Boot MongoDB -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -62,12 +68,11 @@
             <scope>test</scope>
         </dependency>
 
-        <!-- Embedded MongoDB for testing -->
+        <!-- Embedded MongoDB -->
         <dependency>
             <groupId>de.flapdoodle.embed</groupId>
             <artifactId>de.flapdoodle.embed.mongo.spring3x</artifactId>
             <version>4.21.0</version>
-            <scope>test</scope>
         </dependency>
     </dependencies>
     <build>

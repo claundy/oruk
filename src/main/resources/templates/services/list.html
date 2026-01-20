@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Services</title>
+</head>
+<body>
+    <h1>Services</h1>
+    <a href="/ui/services/new">Add New Service</a>
+    <table>
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Description</th>
+                <th>Email</th>
+                <th>URL</th>
+                <th>Status</th>
+                <th>Organization</th>
+                <th>Location</th>
+                <th>Taxonomies</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="service : ${services}">
+                <td th:text="${service.id}"></td>
+                <td th:text="${service.name}"></td>
+                <td th:text="${service.description}"></td>
+                <td th:text="${service.email}"></td>
+                <td th:text="${service.url}"></td>
+                <td th:text="${service.status}"></td>
+                <td th:text="${service.organization?.name}"></td>
+                <td th:text="${service.location?.name}"></td>
+                <td>
+                    <ul>
+                        <li th:each="taxonomy : ${service.taxonomies}" th:text="${taxonomy.name}"></li>
+                    </ul>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
